@@ -1,6 +1,10 @@
 # text-editor
 This text-editor is like a google-docs that lets you collaborate in real time. 
 
+Frontend: React, Quill Api
+Connection: Socket.io
+Server: ExpressJs, MongoDb
+
 It creates a room with random room and if people share the same room they can see the changes in real time.
 
 This is how the link will look like:
