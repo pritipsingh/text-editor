@@ -1,12 +1,12 @@
 
 const mongoose = require("mongoose");
 const Document = require("./Document.js")
-
+require('dotenv').config()
 
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/text-editor');
+  await mongoose.connect(process.env.MONGO_URI);
 }
 
 const io = require("socket.io")(3001, {
