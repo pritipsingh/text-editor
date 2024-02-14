@@ -32,6 +32,29 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 
+.share-button {
+  position: fixed; /* Fixed positioning to make it stick */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  padding: 10px 20px; /* Padding for the button */
+  background-color: #007bff; /* Background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor pointer on hover */
+}
+
+.copied-message {
+  position: fixed;
+  bottom: 60px; /* Adjusted to appear above the button */
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
 @page {
   margin: 1in;
 }

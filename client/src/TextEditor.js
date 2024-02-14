@@ -3,7 +3,7 @@ import Quill from 'quill'
 import "quill/dist/quill.snow.css";
 import {io} from 'socket.io-client';
 import { useParams } from 'react-router-dom';
-
+import ShareButton from './ShareButton'
 const SAVE_INTERVAL_MS = 2000;
 
 const TOOLBAR_OPTIONS = [
@@ -110,7 +110,10 @@ const TextEditor = () => {
   }, [])
   
   return (
+    <>
     <div className= "container" ref={wrapperRef}></div>
+    <ShareButton />
+    </>
   )
 }
 
