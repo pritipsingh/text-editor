@@ -25,7 +25,7 @@ const TextEditor = () => {
   const [quill, setQuill] = useState()
   
   useEffect(()=> {
-    const s = io("https://text-editor-mauve.vercel.app/")
+    const s = io("https://text-editor-npgh.vercel.app/")
     setSocket(s)
 
     return () => { 
