@@ -9,7 +9,7 @@ async function main() {
   await mongoose.connect(process.env.MONGO_URI);
 }
 
-const io = require("socket.io")(process.env.SERVER_PORT, {
+const io = require("socket.io")(process.env.SERVER_PORT || 3001, {
   cors: {
     // origin: process.env.REACT_APP_PORT,
     origin: '*',
