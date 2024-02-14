@@ -26,6 +26,7 @@ const TextEditor = () => {
   
   useEffect(()=> {
     const s = io("https://text-editor-npgh.vercel.app/")
+    console.log(s);
     setSocket(s)
 
     return () => { 
