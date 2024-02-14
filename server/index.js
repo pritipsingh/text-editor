@@ -2,20 +2,34 @@
 const mongoose = require("mongoose");
 const Document = require("./Document.js")
 require('dotenv').config()
+const app = require('express')();
+const server = require('http').createServer(app);
+
+
+app.get('/', function(req, res) {
+    res.send("I am running", server, io);
+  });
 
 main().catch(err => console.log(err));
+
+
+const port = process.env.PORT || 3001;
 
 async function main() {
   await mongoose.connect(process.env.MONGO_URI);
 }
 
-const io = require("socket.io")(process.env.PORT || 3001, {
+const io = require("socket.io")(server, {
   cors: {
     // origin: process.env.REACT_APP_PORT,
     origin: '*',
     methods: ['GET', 'POST']
   }
 })
+
+console.log(io);
+
+console.log(port, server)
 
 const defaultValue = ""
 
@@ -41,3 +55,7 @@ async function findOrCreateDocument(id) {
   if (document) return document;
   return await Document.create({_id: id, data: defaultValue})
 }
+
+server.listen(port, function() {
+    console.log(`Listening on port ${port}`);
+  });
