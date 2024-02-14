@@ -9,9 +9,10 @@ async function main() {
   await mongoose.connect(process.env.MONGO_URI);
 }
 
-const io = require("socket.io")("https://text-editor-npgh.vercel.app/", {
+const io = require("socket.io")(process.env.SERVER_PORT, {
   cors: {
-    origin: 'https://text-editor-npgh.vercel.app/',
+    // origin: process.env.REACT_APP_PORT,
+    origin: '*',
     methods: ['GET', 'POST']
   }
 })

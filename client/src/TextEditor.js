@@ -25,7 +25,8 @@ const TextEditor = () => {
   const [quill, setQuill] = useState()
   
   useEffect(()=> {
-    const s = io("https://text-editor-npgh.vercel.app/")
+    console.log(process.env.REACT_APP_PORT);
+    const s = io(process.env.REACT_APP_PORT)
     console.log(s);
     setSocket(s)
 
